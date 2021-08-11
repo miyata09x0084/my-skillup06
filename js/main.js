@@ -1,4 +1,4 @@
-let scene, camera, renderer;
+let scene, camera, cloudParticles = [];
 
 function init() {
   scene = new THREE.Scene();
@@ -37,6 +37,7 @@ function init() {
       cloud.rotation.y = -0.12;
       cloud.rotation.z = Math.random()*2*Math.PI;
       cloud.material.opacity = 0.55;
+      cloudParticles.push(cloud);
       scene.add(cloud);
     }
   });
@@ -45,6 +46,9 @@ function init() {
 }
 
 function render() {
+  cloudParticles.forEach(p => {
+    p.rotation.z -= 0.001;
+  });
   renderer.render(scene, camera);
   requestAnimationFrame(render);
 }
