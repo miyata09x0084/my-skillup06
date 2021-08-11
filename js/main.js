@@ -11,6 +11,14 @@ function init() {
   let ambient = new THREE.AmbientLight(0x555555);
   scene.add(ambient);
 
+  let directionalLight = new THREE.DirectionalLight(0xff8c19);
+  directionalLight.position.set(0, 0, 1);
+  scene.add(directionalLight);
+
+  let orangeLight = new THREE.PointLight(0xcc6600, 50, 450, 1.7);
+  orangeLight.position.set(200, 300, 100);
+  scene.add(orangeLight);
+
   renderer = new THREE.WebGLRenderer();
   renderer.setSize(window.innerWidth, window.innerHeight);
   scene.fog = new THREE.FogExp2(0x03544e, 0.001);
