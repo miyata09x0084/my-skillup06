@@ -18,6 +18,12 @@ function init() {
   let orangeLight = new THREE.PointLight(0xcc6600, 50, 450, 1.7);
   orangeLight.position.set(200, 300, 100);
   scene.add(orangeLight);
+  let redLight = new THREE.PointLight(0xd8547e, 50, 450, 1.7);
+  redLight.position.set(100, 300, 100);
+  scene.add(redLight);
+  let blueLight = new THREE.PointLight(0x3677ac, 50, 450, 1.7);
+  blueLight.position.set(300, 300, 200);
+  scene.add(blueLight);
 
   renderer = new THREE.WebGLRenderer();
   renderer.setSize(window.innerWidth, window.innerHeight);
